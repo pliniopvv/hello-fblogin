@@ -1,0 +1,16 @@
+<div class="w-25 m-auto mt-5">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="username" id="email" area-describedby="emailhelp">
+      <div class="emailhelp" class="form-text">Digite um e-mail para logar!</div>
+    </div>
+    <div class="mb-3">
+      <label for="senha" class="form-label">Senha</label>
+      <input type="password" name="password" class="form-control" id="senha" area-describedby="passwordHelp">
+      <div class="passwordHelp" class="form-text">Digite uma senha, por gentileza!</div>
+    </div>
+    <div class="mb-3 d-grid">
+      <button class="btn btn-primary" >Logar</button>
+      <button class="btn btn-primary mt-1" (click)="fbLogin()">Logar com FB</button>
+    </div>
+</div>
