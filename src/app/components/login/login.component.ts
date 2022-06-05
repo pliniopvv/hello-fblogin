@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FacebookService } from 'src/app/service/facebook.service';
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   fbLogin() {
-    this.facebookService.logar();
+    this.facebookService.logar().subscribe(r => console.log(r));
   }
 
 }

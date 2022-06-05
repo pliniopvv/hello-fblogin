@@ -43,8 +43,18 @@ userID - é o ID da pessoa que está usando o aplicativo.
 
 
   logar() {
+    let retorno = new BehaviorSubject(null);
     // @ts-ignore
-    let ret = FB.login();
-    console.log(ret);
+    FB.login();
+    // @ts-ignore
+    FB.api(
+      '/me',
+      'GET',
+      {"fields":"id,name,email"},
+      function(response: any) {
+        retorno.next(response);
+      }
+    );
+    return retorno;
   }
 }
